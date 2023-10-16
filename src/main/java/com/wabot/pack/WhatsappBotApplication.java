@@ -20,7 +20,7 @@ public class WhatsappBotApplication {
 		SpringApplication.run(WhatsappBotApplication.class, args);
 		System.out.println("Hola");
 		
-		WhatsappApiFactory factory = WhatsappApiFactory.newInstance("EAALlrztJOEUBAEGYitJZCcYOvzcxPfqLBsyBj4aB3FOUaKMUrhZBYwdOnz4uiRkLXoy12M1Q66OJ1VF2WQqD9D8gfVjYidAExDscD78itvzsgv48PMiKZCH9cH7FtilURsTaZAH5T9bhbCZAcZAmTdJqzfy9IMwq2Xw8cNZBnIWHHyMxv7YUJU4");
+		WhatsappApiFactory factory = WhatsappApiFactory.newInstance("Token");
 		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi();
 		 
         // Set http proxy without credentials before the creation of the api instance
@@ -32,7 +32,7 @@ public class WhatsappBotApplication {
                         .setBody(Formatter.bold("Hello world!") + "\nSome code here: \n" + Formatter.code("hello world code here"))//
                         .setPreviewUrl(false));
 
-        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage("1875189042565414", message);
+        MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage("phone_num_id", message);
 
         System.out.println(messageResponse);
 	}
